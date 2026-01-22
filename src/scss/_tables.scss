@@ -1,0 +1,52 @@
+// =============================================================================
+// Dracula CSS - Tables
+// Table styling with striped rows
+// =============================================================================
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--drac-spacing-md);
+  font-size: 0.95em;
+}
+
+caption {
+  padding: var(--drac-spacing-sm);
+  caption-side: bottom;
+  color: var(--drac-comment);
+  text-align: left;
+  font-style: italic;
+}
+
+thead {
+  background-color: var(--drac-ui-bg-light);
+}
+
+th {
+  padding: var(--drac-spacing-sm) var(--drac-spacing-md);
+  text-align: left;
+  font-weight: 600;
+  color: var(--drac-heading-color);
+  border-bottom: 2px solid var(--drac-border-color);
+}
+
+td {
+  padding: var(--drac-spacing-sm) var(--drac-spacing-md);
+  border-bottom: 1px solid var(--drac-border-color);
+}
+
+// Striped rows
+tbody tr:nth-child(2n) {
+  background-color: var(--drac-ui-bg-dark);
+}
+
+// Hover effect
+tbody tr:hover {
+  background-color: var(--drac-selection);
+}
+
+// Responsive wrapper (optional - user can wrap table in this)
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}

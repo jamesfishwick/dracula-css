@@ -1,0 +1,220 @@
+// =============================================================================
+// Dracula CSS - Typography
+// Headings, paragraphs, links, and text styles
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// Headings
+// -----------------------------------------------------------------------------
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--drac-heading-color);
+  font-weight: 600;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: 2.25em;
+  border-bottom: 1px solid var(--drac-border-color);
+  padding-bottom: 0.3em;
+}
+
+h2 {
+  font-size: 1.75em;
+  border-bottom: 1px solid var(--drac-border-color);
+  padding-bottom: 0.3em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+h4 {
+  font-size: 1.25em;
+}
+
+h5 {
+  font-size: 1.1em;
+}
+
+h6 {
+  font-size: 1em;
+  color: var(--drac-comment);
+}
+
+// -----------------------------------------------------------------------------
+// Paragraphs
+// -----------------------------------------------------------------------------
+
+p {
+  margin-top: 0;
+  margin-bottom: var(--drac-spacing-md);
+}
+
+// -----------------------------------------------------------------------------
+// Links
+// -----------------------------------------------------------------------------
+
+a {
+  color: var(--drac-link-color);
+  text-decoration: none;
+  transition: color var(--drac-transition-duration) var(--drac-transition-timing);
+
+  &:hover,
+  &:focus {
+    color: var(--drac-link-hover-color);
+    text-decoration: underline;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Text Emphasis
+// -----------------------------------------------------------------------------
+
+strong,
+b {
+  color: var(--drac-strong-color);
+  font-weight: 600;
+}
+
+em,
+i {
+  color: var(--drac-emphasis-color);
+  font-style: italic;
+}
+
+// -----------------------------------------------------------------------------
+// Strikethrough and Insertions
+// -----------------------------------------------------------------------------
+
+del,
+s {
+  color: var(--drac-del-color);
+  text-decoration: line-through;
+}
+
+ins {
+  color: var(--drac-ins-color);
+  text-decoration: underline;
+}
+
+// -----------------------------------------------------------------------------
+// Mark / Highlight
+// -----------------------------------------------------------------------------
+
+mark {
+  background-color: var(--drac-mark-bg);
+  color: var(--drac-mark-color);
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+}
+
+// -----------------------------------------------------------------------------
+// Blockquotes
+// -----------------------------------------------------------------------------
+
+blockquote {
+  margin: var(--drac-spacing-md) 0;
+  padding: var(--drac-spacing-sm) var(--drac-spacing-md);
+  border-left: 0.25em solid var(--drac-blockquote-color);
+  color: var(--drac-blockquote-color);
+  background-color: var(--drac-ui-bg-dark);
+  border-radius: 0 var(--drac-border-radius) var(--drac-border-radius) 0;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Lists
+// -----------------------------------------------------------------------------
+
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: var(--drac-spacing-md);
+  padding-left: 2em;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+li {
+  margin-bottom: var(--drac-spacing-xs);
+
+  &::marker {
+    color: var(--drac-pink);
+  }
+}
+
+// Nested lists
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+  margin-bottom: 0;
+}
+
+ul ul {
+  list-style-type: circle;
+}
+
+ul ul ul {
+  list-style-type: square;
+}
+
+ol ol {
+  list-style-type: lower-roman;
+}
+
+ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+// Definition lists
+dl {
+  margin-top: 0;
+  margin-bottom: var(--drac-spacing-md);
+}
+
+dt {
+  font-weight: 600;
+  color: var(--drac-heading-color);
+}
+
+dd {
+  margin-left: 2em;
+  margin-bottom: var(--drac-spacing-sm);
+}
+
+// -----------------------------------------------------------------------------
+// Details / Summary
+// -----------------------------------------------------------------------------
+
+details {
+  margin-bottom: var(--drac-spacing-md);
+  border: 1px solid var(--drac-border-color);
+  border-radius: var(--drac-border-radius);
+  padding: var(--drac-spacing-sm) var(--drac-spacing-md);
+  background-color: var(--drac-ui-bg-dark);
+
+  &[open] summary {
+    margin-bottom: var(--drac-spacing-sm);
+    border-bottom: 1px solid var(--drac-border-color);
+    padding-bottom: var(--drac-spacing-sm);
+  }
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--drac-heading-color);
+}

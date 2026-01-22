@@ -1,0 +1,410 @@
+// =============================================================================
+// Dracula CSS - Syntax Highlighting Integration
+// Container styling for Prism.js, Highlight.js, and Shiki
+// =============================================================================
+//
+// This module provides container/wrapper styles that complement external
+// syntax highlighters. It does NOT provide the actual token colors — use
+// the official Dracula themes for each library:
+//
+//   - Prism.js:     https://github.com/dracula/prism
+//   - Highlight.js: https://github.com/dracula/highlightjs
+//   - Shiki:        Built-in theme: 'dracula' or 'dracula-soft'
+//
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// Shared Code Block Container
+// Works with all highlighters
+// -----------------------------------------------------------------------------
+
+// Base pre/code styling (also in _code.scss, but these are highlighter-specific)
+pre[class*="language-"],
+pre.shiki,
+pre.hljs {
+  background-color: var(--drac-ui-bg-dark);
+  color: var(--drac-fg);
+  font-family: var(--drac-font-family-mono);
+  font-size: 0.9em;
+  line-height: 1.5;
+  padding: var(--drac-spacing-md);
+  margin: var(--drac-spacing-md) 0;
+  border-radius: var(--drac-border-radius);
+  overflow-x: auto;
+  tab-size: 2;
+  -moz-tab-size: 2;
+
+  // Scrollbar styling
+  &::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--drac-ui-bg-darker);
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--drac-comment);
+    border-radius: 4px;
+
+    &:hover {
+      background: var(--drac-purple);
+    }
+  }
+}
+
+// Inline code within highlighted blocks
+pre[class*="language-"] code,
+pre.shiki code,
+pre.hljs code {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit;
+  color: inherit;
+}
+
+// -----------------------------------------------------------------------------
+// Prism.js Specific
+// -----------------------------------------------------------------------------
+
+// Prism toolbar (if using toolbar plugin)
+div.code-toolbar {
+  position: relative;
+
+  > .toolbar {
+    position: absolute;
+    top: var(--drac-spacing-sm);
+    right: var(--drac-spacing-sm);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+
+    .toolbar-item {
+      display: inline-block;
+      margin-left: var(--drac-spacing-xs);
+    }
+
+    button,
+    a,
+    span {
+      font-family: var(--drac-font-family);
+      font-size: 0.75rem;
+      padding: 0.25rem 0.5rem;
+      background: var(--drac-ui-bg-light);
+      color: var(--drac-fg);
+      border: none;
+      border-radius: var(--drac-border-radius);
+      cursor: pointer;
+      transition: background-color var(--drac-transition-duration) var(--drac-transition-timing);
+
+      &:hover {
+        background: var(--drac-purple);
+      }
+    }
+  }
+
+  &:hover > .toolbar {
+    opacity: 1;
+  }
+}
+
+// Prism line numbers (if using line-numbers plugin)
+pre[class*="language-"].line-numbers {
+  position: relative;
+  padding-left: 3.5em;
+  counter-reset: linenumber;
+
+  > code {
+    position: relative;
+    white-space: inherit;
+  }
+
+  .line-numbers-rows {
+    position: absolute;
+    pointer-events: none;
+    top: var(--drac-spacing-md);
+    left: 0;
+    width: 3em;
+    font-size: 100%;
+    letter-spacing: -1px;
+    border-right: 1px solid var(--drac-ui-bg-light);
+    user-select: none;
+
+    > span {
+      display: block;
+      counter-increment: linenumber;
+
+      &::before {
+        content: counter(linenumber);
+        color: var(--drac-comment);
+        display: block;
+        padding-right: 0.8em;
+        text-align: right;
+      }
+    }
+  }
+}
+
+// Prism line highlight (if using line-highlight plugin)
+pre[class*="language-"] .line-highlight {
+  background: rgba(189, 147, 249, 0.15); // purple with opacity
+  margin-top: var(--drac-spacing-md);
+  padding: 0;
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+// Prism command line (if using command-line plugin)
+.command-line-prompt {
+  border-right: 1px solid var(--drac-comment);
+  display: block;
+  float: left;
+  font-size: 100%;
+  letter-spacing: -1px;
+  margin-right: 1em;
+  padding-right: 0.8em;
+  pointer-events: none;
+  user-select: none;
+
+  > span {
+    &::before {
+      color: var(--drac-green);
+      content: "$";
+      display: block;
+      padding-right: 0.8em;
+    }
+
+    &[data-user]::before {
+      content: "[" attr(data-user) "@" attr(data-host) "] $";
+    }
+
+    &[data-user="root"]::before {
+      color: var(--drac-red);
+    }
+
+    &[data-prompt]::before {
+      content: attr(data-prompt);
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Highlight.js Specific
+// -----------------------------------------------------------------------------
+
+// Highlight.js uses .hljs class
+.hljs {
+  background: var(--drac-ui-bg-dark);
+  color: var(--drac-fg);
+}
+
+// Highlight.js line numbers (if using highlightjs-line-numbers plugin)
+.hljs-ln {
+  border-collapse: collapse;
+
+  td {
+    padding: 0;
+  }
+
+  // Line numbers column
+  td.hljs-ln-numbers {
+    user-select: none;
+    text-align: right;
+    color: var(--drac-comment);
+    border-right: 1px solid var(--drac-ui-bg-light);
+    vertical-align: top;
+    padding-right: 0.8em !important;
+
+    .hljs-ln-n {
+      padding-right: 0.5em;
+    }
+  }
+
+  // Code column
+  td.hljs-ln-code {
+    padding-left: 1em !important;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Shiki Specific
+// -----------------------------------------------------------------------------
+
+// Shiki outputs inline styles, but we can style the container
+pre.shiki {
+  // Shiki sets background inline, but we can provide fallback
+  background-color: var(--drac-ui-bg-dark);
+
+  // Lines must be block for backgrounds to display properly
+  .line {
+    display: block;
+  }
+
+  // Diff highlighting (shiki transformerNotationDiff)
+  .line.diff {
+    &.add {
+      background-color: rgba(80, 250, 123, 0.15); // green
+    }
+
+    &.remove {
+      background-color: rgba(255, 85, 85, 0.15); // red
+    }
+  }
+
+  // Focus highlighting (shiki transformerNotationFocus)
+  &.has-focused .line:not(.focused) {
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+  }
+
+  &.has-focused:hover .line:not(.focused) {
+    opacity: 1;
+  }
+
+  // Highlighted lines (shiki transformerNotationHighlight)
+  .line.highlighted {
+    background-color: rgba(189, 147, 249, 0.15); // purple
+  }
+
+  // Word highlighting
+  .highlighted-word {
+    background-color: rgba(189, 147, 249, 0.3);
+    padding: 0.1em 0.2em;
+    border-radius: 3px;
+  }
+
+  // Error/warning lines
+  .line.error {
+    background-color: rgba(255, 85, 85, 0.15);
+  }
+
+  .line.warning {
+    background-color: rgba(255, 184, 108, 0.15);
+  }
+}
+
+// Shiki with line numbers (via CSS counter)
+pre.shiki.line-numbers {
+  padding-left: 3.5em;
+  position: relative;
+
+  code {
+    counter-reset: line;
+
+    .line {
+      &::before {
+        counter-increment: line;
+        content: counter(line);
+        display: inline-block;
+        width: 2.5em;
+        margin-left: -3.5em;
+        margin-right: 1em;
+        text-align: right;
+        color: var(--drac-comment);
+        border-right: 1px solid var(--drac-ui-bg-light);
+        padding-right: 0.5em;
+      }
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Code Block Header/Title
+// Common pattern for showing filename above code
+// -----------------------------------------------------------------------------
+
+.code-block {
+  position: relative;
+  margin: var(--drac-spacing-md) 0;
+
+  // Filename header
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--drac-ui-bg-darker);
+    color: var(--drac-comment);
+    font-family: var(--drac-font-family-mono);
+    font-size: 0.8em;
+    padding: var(--drac-spacing-xs) var(--drac-spacing-md);
+    border-radius: var(--drac-border-radius) var(--drac-border-radius) 0 0;
+    border-bottom: 1px solid var(--drac-ui-bg-light);
+  }
+
+  &__filename {
+    color: var(--drac-fg);
+  }
+
+  &__language {
+    color: var(--drac-comment);
+    text-transform: uppercase;
+    font-size: 0.75em;
+  }
+
+  // Remove top border-radius from code block
+  pre {
+    margin-top: 0;
+    border-radius: 0 0 var(--drac-border-radius) var(--drac-border-radius);
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Copy Button
+// Common pattern for adding copy functionality
+// -----------------------------------------------------------------------------
+
+.code-copy-button {
+  position: absolute;
+  top: var(--drac-spacing-sm);
+  right: var(--drac-spacing-sm);
+  padding: 0.25rem 0.5rem;
+  background: var(--drac-ui-bg-light);
+  color: var(--drac-fg);
+  border: none;
+  border-radius: var(--drac-border-radius);
+  font-family: var(--drac-font-family);
+  font-size: 0.75rem;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease, background-color var(--drac-transition-duration) var(--drac-transition-timing);
+
+  &:hover {
+    background: var(--drac-purple);
+  }
+
+  &.copied {
+    background: var(--drac-green);
+    color: var(--drac-bg);
+  }
+}
+
+// Show copy button on hover
+pre:hover .code-copy-button,
+.code-block:hover .code-copy-button {
+  opacity: 1;
+}
+
+// -----------------------------------------------------------------------------
+// Language Badge
+// Show language in corner of code block
+// -----------------------------------------------------------------------------
+
+pre[data-language]::before {
+  content: attr(data-language);
+  position: absolute;
+  top: var(--drac-spacing-xs);
+  right: var(--drac-spacing-sm);
+  padding: 0.1em 0.4em;
+  background: var(--drac-ui-bg-light);
+  color: var(--drac-comment);
+  font-size: 0.65em;
+  text-transform: uppercase;
+  border-radius: 3px;
+  pointer-events: none;
+}
+
+pre[data-language] {
+  position: relative;
+}

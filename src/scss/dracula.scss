@@ -1,0 +1,38 @@
+// =============================================================================
+// Dracula CSS
+// Framework-agnostic Dracula theme for the web
+// https://github.com/dracula/css
+// =============================================================================
+
+// Variables (includes CSS custom properties)
+@use "variables";
+
+// Light mode (Alucard)
+@use "variables-light";
+
+// Mixins (optional utilities)
+@use "mixins";
+
+// Base styles
+@use "base";
+
+// Typography
+@use "typography";
+
+// Code
+@use "code";
+
+// Forms
+@use "forms";
+
+// Tables
+@use "tables";
+
+// Esoteric HTML elements
+@use "esoteric";
+
+// Web Components (custom elements, shadow DOM)
+@use "web-components";
+
+// Syntax Highlighting (Prism, Highlight.js, Shiki integration)
+@use "syntax-highlighting";

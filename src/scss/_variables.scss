@@ -1,0 +1,201 @@
+// =============================================================================
+// 🧛 Dracula CSS - Variables
+// https://spec.draculatheme.com/
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// Syntax Palette (Dracula Classic)
+// For prose/content elements - bright, high contrast
+// -----------------------------------------------------------------------------
+
+$drac-bg: #282a36 !default;
+$drac-fg: #f8f8f2 !default;
+$drac-selection: #44475a !default;
+$drac-comment: #6272a4 !default;
+$drac-red: #ff5555 !default;
+$drac-orange: #ffb86c !default;
+$drac-yellow: #f1fa8c !default;
+$drac-green: #50fa7b !default;
+$drac-purple: #bd93f9 !default;
+$drac-cyan: #8be9fd !default;
+$drac-pink: #ff79c6 !default;
+
+// -----------------------------------------------------------------------------
+// UI Background Scale (Dracula Classic)
+// For surfaces and elevation
+// -----------------------------------------------------------------------------
+
+$drac-ui-bg-darker: #191a21 !default;
+$drac-ui-bg-dark: #21222c !default;
+$drac-ui-bg-light: #343746 !default;
+$drac-ui-bg-lighter: #424450 !default;
+$drac-ui-float: #343746 !default;
+
+// -----------------------------------------------------------------------------
+// Functional Colors
+// UI-specific colors for interactive elements, borders, and indicators.
+// Per spec: "Do not use in editor or terminal applications."
+// -----------------------------------------------------------------------------
+
+$drac-ui-error: #de5735 !default;
+$drac-ui-warning: #a39514 !default;
+$drac-ui-success: #089108 !default;
+$drac-ui-info: #0081d6 !default;
+$drac-ui-focus: #815cd6 !default;
+
+// -----------------------------------------------------------------------------
+// ANSI Colors (for terminal compatibility)
+// -----------------------------------------------------------------------------
+
+$drac-ansi-black: #21222c !default;
+$drac-ansi-red: #ff5555 !default;
+$drac-ansi-green: #50fa7b !default;
+$drac-ansi-yellow: #f1fa8c !default;
+$drac-ansi-blue: #bd93f9 !default;
+$drac-ansi-magenta: #ff79c6 !default;
+$drac-ansi-cyan: #8be9fd !default;
+$drac-ansi-white: #f8f8f2 !default;
+
+$drac-ansi-bright-black: #6272a4 !default;
+$drac-ansi-bright-red: #ff6e6e !default;
+$drac-ansi-bright-green: #69ff94 !default;
+$drac-ansi-bright-yellow: #ffffa5 !default;
+$drac-ansi-bright-blue: #d6acff !default;
+$drac-ansi-bright-magenta: #ff92df !default;
+$drac-ansi-bright-cyan: #a4ffff !default;
+$drac-ansi-bright-white: #ffffff !default;
+
+// -----------------------------------------------------------------------------
+// Semantic Mappings (Prose Elements)
+// Following dracula-markdown-css conventions
+// -----------------------------------------------------------------------------
+
+$drac-heading-color: $drac-purple !default;
+$drac-link-color: $drac-cyan !default;
+$drac-link-hover-color: $drac-pink !default;
+$drac-strong-color: $drac-orange !default;
+$drac-emphasis-color: $drac-yellow !default;
+$drac-code-color: $drac-green !default;
+$drac-blockquote-color: $drac-comment !default;
+$drac-mark-bg: $drac-yellow !default;
+$drac-mark-color: $drac-bg !default;
+$drac-del-color: $drac-red !default;
+$drac-ins-color: $drac-green !default;
+
+// -----------------------------------------------------------------------------
+// Typography
+// -----------------------------------------------------------------------------
+
+$drac-font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+$drac-font-family-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace !default;
+$drac-font-size-base: 16px !default;
+$drac-line-height: 1.6 !default;
+
+// -----------------------------------------------------------------------------
+// Spacing
+// -----------------------------------------------------------------------------
+
+$drac-spacing-xs: 0.25rem !default;
+$drac-spacing-sm: 0.5rem !default;
+$drac-spacing-md: 1rem !default;
+$drac-spacing-lg: 1.5rem !default;
+$drac-spacing-xl: 2rem !default;
+
+// -----------------------------------------------------------------------------
+// Borders
+// -----------------------------------------------------------------------------
+
+$drac-border-radius: 6px !default;
+$drac-border-color: $drac-comment !default;
+
+// -----------------------------------------------------------------------------
+// Transitions
+// -----------------------------------------------------------------------------
+
+$drac-transition-duration: 0.15s !default;
+$drac-transition-timing: ease !default;
+
+// -----------------------------------------------------------------------------
+// CSS Custom Properties Export
+// -----------------------------------------------------------------------------
+
+:root {
+  // Syntax Palette
+  --drac-bg: #{$drac-bg};
+  --drac-fg: #{$drac-fg};
+  --drac-selection: #{$drac-selection};
+  --drac-comment: #{$drac-comment};
+  --drac-red: #{$drac-red};
+  --drac-orange: #{$drac-orange};
+  --drac-yellow: #{$drac-yellow};
+  --drac-green: #{$drac-green};
+  --drac-purple: #{$drac-purple};
+  --drac-cyan: #{$drac-cyan};
+  --drac-pink: #{$drac-pink};
+
+  // UI Background Scale
+  --drac-ui-bg-darker: #{$drac-ui-bg-darker};
+  --drac-ui-bg-dark: #{$drac-ui-bg-dark};
+  --drac-ui-bg-light: #{$drac-ui-bg-light};
+  --drac-ui-bg-lighter: #{$drac-ui-bg-lighter};
+  --drac-ui-float: #{$drac-ui-float};
+
+  // Functional Colors
+  --drac-ui-error: #{$drac-ui-error};
+  --drac-ui-warning: #{$drac-ui-warning};
+  --drac-ui-success: #{$drac-ui-success};
+  --drac-ui-info: #{$drac-ui-info};
+  --drac-ui-focus: #{$drac-ui-focus};
+
+  // Semantic
+  --drac-heading-color: #{$drac-heading-color};
+  --drac-link-color: #{$drac-link-color};
+  --drac-link-hover-color: #{$drac-link-hover-color};
+  --drac-strong-color: #{$drac-strong-color};
+  --drac-emphasis-color: #{$drac-emphasis-color};
+  --drac-code-color: #{$drac-code-color};
+  --drac-blockquote-color: #{$drac-blockquote-color};
+  --drac-mark-bg: #{$drac-mark-bg};
+  --drac-mark-color: #{$drac-mark-color};
+  --drac-del-color: #{$drac-del-color};
+  --drac-ins-color: #{$drac-ins-color};
+  --drac-border-color: #{$drac-border-color};
+
+  // Typography
+  --drac-font-family: #{$drac-font-family};
+  --drac-font-family-mono: #{$drac-font-family-mono};
+  --drac-font-size-base: #{$drac-font-size-base};
+  --drac-line-height: #{$drac-line-height};
+
+  // Spacing
+  --drac-spacing-xs: #{$drac-spacing-xs};
+  --drac-spacing-sm: #{$drac-spacing-sm};
+  --drac-spacing-md: #{$drac-spacing-md};
+  --drac-spacing-lg: #{$drac-spacing-lg};
+  --drac-spacing-xl: #{$drac-spacing-xl};
+
+  // Borders
+  --drac-border-radius: #{$drac-border-radius};
+
+  // Transitions
+  --drac-transition-duration: #{$drac-transition-duration};
+  --drac-transition-timing: #{$drac-transition-timing};
+
+  // ANSI Colors (for terminal emulators and terminal-like UIs)
+  --drac-ansi-black: #{$drac-ansi-black};
+  --drac-ansi-red: #{$drac-ansi-red};
+  --drac-ansi-green: #{$drac-ansi-green};
+  --drac-ansi-yellow: #{$drac-ansi-yellow};
+  --drac-ansi-blue: #{$drac-ansi-blue};
+  --drac-ansi-magenta: #{$drac-ansi-magenta};
+  --drac-ansi-cyan: #{$drac-ansi-cyan};
+  --drac-ansi-white: #{$drac-ansi-white};
+  --drac-ansi-bright-black: #{$drac-ansi-bright-black};
+  --drac-ansi-bright-red: #{$drac-ansi-bright-red};
+  --drac-ansi-bright-green: #{$drac-ansi-bright-green};
+  --drac-ansi-bright-yellow: #{$drac-ansi-bright-yellow};
+  --drac-ansi-bright-blue: #{$drac-ansi-bright-blue};
+  --drac-ansi-bright-magenta: #{$drac-ansi-bright-magenta};
+  --drac-ansi-bright-cyan: #{$drac-ansi-bright-cyan};
+  --drac-ansi-bright-white: #{$drac-ansi-bright-white};
+}

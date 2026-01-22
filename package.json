@@ -1,0 +1,52 @@
+{
+  "name": "dracula-css",
+  "version": "1.0.0",
+  "description": "Framework-agnostic Dracula theme for the web - CSS variables, Sass, and JS tokens",
+  "main": "dist/dracula.css",
+  "module": "dist/dracula-tokens.js",
+  "types": "dist/dracula-tokens.d.ts",
+  "style": "dist/dracula.css",
+  "sass": "src/scss/dracula.scss",
+  "files": [
+    "dist",
+    "src/scss"
+  ],
+  "scripts": {
+    "build": "npm run build:css && npm run build:css:min && npm run build:css:vars && npm run build:js",
+    "build:css": "sass src/scss/dracula.scss dist/dracula.css --no-source-map",
+    "build:css:min": "sass src/scss/dracula.scss dist/dracula.min.css --style=compressed --no-source-map",
+    "build:css:vars": "sass src/scss/_variables.scss dist/dracula-variables.css --no-source-map",
+    "build:js": "esbuild src/js/tokens.ts --bundle --format=esm --outfile=dist/dracula-tokens.js && tsc src/js/tokens.ts --declaration --emitDeclarationOnly --outDir dist",
+    "watch": "sass src/scss/dracula.scss dist/dracula.css --watch",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dracula/css.git"
+  },
+  "keywords": [
+    "dracula",
+    "theme",
+    "dark-theme",
+    "css",
+    "css-variables",
+    "sass",
+    "scss",
+    "design-tokens",
+    "color-scheme",
+    "alucard",
+    "light-theme"
+  ],
+  "author": "James Fishwick",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dracula/css/issues"
+  },
+  "homepage": "https://draculatheme.com/css",
+  "devDependencies": {
+    "esbuild": "^0.20.0",
+    "sass": "^1.70.0",
+    "typescript": "^5.3.0"
+  }
+}

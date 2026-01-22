@@ -1,0 +1,324 @@
+// =============================================================================
+// Dracula CSS - Web Components
+// Sensible defaults for custom elements and shadow DOM
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// CSS Custom Properties & Shadow DOM
+// -----------------------------------------------------------------------------
+//
+// All --drac-* variables automatically inherit into shadow DOM, so custom
+// elements can use them directly:
+//
+//   // Inside your component's shadow DOM styles:
+//   :host {
+//     background: var(--drac-bg);
+//     color: var(--drac-fg);
+//   }
+//
+// No additional setup required - CSS custom properties pierce shadow boundaries.
+// -----------------------------------------------------------------------------
+
+// -----------------------------------------------------------------------------
+// :host - Base Custom Element Styling
+// -----------------------------------------------------------------------------
+
+// Base host styling for any custom element
+// Components can override these as needed
+:host {
+  display: block;
+  color: var(--drac-fg);
+  font-family: var(--drac-font-family);
+  line-height: var(--drac-line-height);
+  box-sizing: border-box;
+}
+
+// Inline custom elements
+:host([inline]) {
+  display: inline;
+}
+
+// Hidden state
+:host([hidden]) {
+  display: none !important;
+}
+
+// Disabled state
+:host([disabled]) {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+// Focus state for focusable custom elements
+:host(:focus-visible) {
+  outline: 2px solid var(--drac-ui-focus);
+  outline-offset: 2px;
+}
+
+// -----------------------------------------------------------------------------
+// ::part() - Common Part Names
+// Style exposed parts of web components
+// -----------------------------------------------------------------------------
+//
+// Component authors expose parts with: <button part="button">
+// Consumers style them with: ::part(button) { ... }
+//
+// These are common conventions across component libraries.
+// -----------------------------------------------------------------------------
+
+// Buttons - shared base styles
+::part(button),
+::part(button-primary),
+::part(button-secondary) {
+  font-family: var(--drac-font-family);
+  font-size: 1rem;
+  padding: var(--drac-spacing-sm) var(--drac-spacing-md);
+  color: var(--drac-fg);
+  border: none;
+  border-radius: var(--drac-border-radius);
+  cursor: pointer;
+  transition: background-color var(--drac-transition-duration) var(--drac-transition-timing);
+
+  &:focus-visible {
+    outline: 2px solid var(--drac-ui-focus);
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+// Default and primary button colors
+::part(button),
+::part(button-primary) {
+  background-color: var(--drac-purple);
+
+  &:hover {
+    background-color: var(--drac-pink);
+  }
+}
+
+// Secondary button colors
+::part(button-secondary) {
+  background-color: var(--drac-ui-bg-light);
+
+  &:hover {
+    background-color: var(--drac-ui-bg-lighter);
+  }
+}
+
+// Text inputs
+::part(input),
+::part(textfield) {
+  font-family: var(--drac-font-family);
+  font-size: 1rem;
+  padding: var(--drac-spacing-sm) var(--drac-spacing-md);
+  background-color: var(--drac-ui-bg-dark);
+  color: var(--drac-fg);
+  border: 1px solid var(--drac-border-color);
+  border-radius: var(--drac-border-radius);
+
+  &::placeholder {
+    color: var(--drac-comment);
+  }
+
+  &:focus {
+    border-color: var(--drac-purple);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(189, 147, 249, 0.25);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+// Labels
+::part(label) {
+  display: block;
+  margin-bottom: var(--drac-spacing-xs);
+  font-weight: 600;
+  color: var(--drac-fg);
+}
+
+// Helper/description text
+::part(helper),
+::part(description) {
+  font-size: 0.875rem;
+  color: var(--drac-comment);
+  margin-top: var(--drac-spacing-xs);
+}
+
+// Error messages
+::part(error) {
+  font-size: 0.875rem;
+  color: var(--drac-ui-error);
+  margin-top: var(--drac-spacing-xs);
+}
+
+// Panels/containers
+::part(panel),
+::part(container) {
+  background-color: var(--drac-ui-bg-light);
+  border: 1px solid var(--drac-border-color);
+  border-radius: var(--drac-border-radius);
+  padding: var(--drac-spacing-md);
+}
+
+// Headers within components
+::part(header) {
+  font-weight: 600;
+  color: var(--drac-heading-color);
+  margin-bottom: var(--drac-spacing-sm);
+}
+
+// Content areas
+::part(content),
+::part(body) {
+  color: var(--drac-fg);
+}
+
+// Footers within components
+::part(footer) {
+  margin-top: var(--drac-spacing-md);
+  padding-top: var(--drac-spacing-sm);
+  border-top: 1px solid var(--drac-border-color);
+  color: var(--drac-comment);
+}
+
+// Icons
+::part(icon) {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+}
+
+// Badges/chips
+::part(badge),
+::part(chip),
+::part(tag) {
+  display: inline-block;
+  padding: 0.2em 0.6em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background-color: var(--drac-ui-bg-light);
+  color: var(--drac-fg);
+  border-radius: 9999px;
+}
+
+// List items
+::part(listitem),
+::part(item) {
+  padding: var(--drac-spacing-sm) var(--drac-spacing-md);
+  border-bottom: 1px solid var(--drac-ui-bg-light);
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:hover {
+    background-color: var(--drac-ui-bg-dark);
+  }
+}
+
+// Menu items
+::part(menuitem) {
+  display: block;
+  padding: var(--drac-spacing-sm) var(--drac-spacing-md);
+  color: var(--drac-fg);
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--drac-ui-bg-light);
+  }
+}
+
+// Overlay/backdrop for modals, dialogs
+::part(overlay),
+::part(backdrop) {
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(2px);
+}
+
+// -----------------------------------------------------------------------------
+// ::slotted() - Slotted Content Defaults
+// -----------------------------------------------------------------------------
+//
+// Style content projected into slots.
+// Note: ::slotted() only selects direct children of slots.
+// -----------------------------------------------------------------------------
+
+::slotted(*) {
+  // Ensure slotted content inherits the component's font
+  font-family: inherit;
+}
+
+::slotted(a) {
+  color: var(--drac-link-color);
+
+  &:hover {
+    color: var(--drac-link-hover-color);
+  }
+}
+
+::slotted(code) {
+  font-family: var(--drac-font-family-mono);
+  color: var(--drac-code-color);
+  background-color: var(--drac-ui-bg-dark);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+}
+
+::slotted(strong) {
+  color: var(--drac-strong-color);
+}
+
+::slotted(em) {
+  color: var(--drac-emphasis-color);
+}
+
+// -----------------------------------------------------------------------------
+// Form-Associated Custom Elements
+// Newer ElementInternals states (requires browser support)
+// -----------------------------------------------------------------------------
+
+// User has interacted and value is valid
+:host(:user-valid) {
+  --_validation-color: var(--drac-ui-success);
+}
+
+// User has interacted and value is invalid
+:host(:user-invalid) {
+  --_validation-color: var(--drac-ui-error);
+}
+
+// Styling for validation states
+::part(input):user-valid {
+  border-color: var(--drac-ui-success);
+}
+
+::part(input):user-invalid {
+  border-color: var(--drac-ui-error);
+}
+
+// -----------------------------------------------------------------------------
+// Theming Support for Component Authors
+// -----------------------------------------------------------------------------
+//
+// Component authors can use these CSS custom properties internally:
+//
+//   :host {
+//     --component-bg: var(--drac-ui-bg-light);
+//     --component-text: var(--drac-fg);
+//     --component-border: var(--drac-border-color);
+//     --component-accent: var(--drac-purple);
+//     --component-accent-hover: var(--drac-pink);
+//   }
+//
+// This allows consumers to override component-specific properties while
+// still inheriting from the Dracula theme.
+// -----------------------------------------------------------------------------

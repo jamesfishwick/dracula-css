@@ -1,0 +1,454 @@
+// =============================================================================
+// Dracula CSS - Esoteric Elements
+// Styling for obscure but semantically meaningful HTML elements
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// Citation & Attribution
+// -----------------------------------------------------------------------------
+
+cite {
+  color: var(--drac-pink);
+  font-style: italic;
+}
+
+q {
+  color: var(--drac-fg);
+  quotes: """ """ "'" "'";
+
+  &::before {
+    content: open-quote;
+    color: var(--drac-comment);
+  }
+
+  &::after {
+    content: close-quote;
+    color: var(--drac-comment);
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Data & Machine-Readable Content
+// -----------------------------------------------------------------------------
+
+data {
+  font-family: var(--drac-font-family-mono);
+  color: var(--drac-cyan);
+}
+
+time {
+  color: var(--drac-orange);
+}
+
+// -----------------------------------------------------------------------------
+// Technical & Programming
+// -----------------------------------------------------------------------------
+
+// var is in _code.scss, but let's ensure it's styled
+var {
+  font-family: var(--drac-font-family-mono);
+  font-style: italic;
+  color: var(--drac-orange);
+}
+
+samp {
+  font-family: var(--drac-font-family-mono);
+  font-size: 0.9em;
+  color: var(--drac-yellow);
+  background-color: var(--drac-ui-bg-dark);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+}
+
+output {
+  font-family: var(--drac-font-family-mono);
+  color: var(--drac-green);
+  background-color: var(--drac-ui-bg-dark);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+}
+
+// -----------------------------------------------------------------------------
+// Bidirectional Text
+// -----------------------------------------------------------------------------
+
+bdi {
+  unicode-bidi: isolate;
+}
+
+bdo {
+  unicode-bidi: bidi-override;
+}
+
+// -----------------------------------------------------------------------------
+// Ruby Annotations (East Asian Typography)
+// -----------------------------------------------------------------------------
+
+ruby {
+  ruby-align: center;
+}
+
+rt {
+  font-size: 0.6em;
+  color: var(--drac-comment);
+}
+
+rp {
+  color: var(--drac-comment);
+}
+
+// -----------------------------------------------------------------------------
+// Meter & Progress
+// -----------------------------------------------------------------------------
+
+meter {
+  width: 100%;
+  height: 1em;
+  appearance: none;
+  border: none;
+  border-radius: var(--drac-border-radius);
+  background-color: var(--drac-ui-bg-light);
+
+  // WebKit
+  &::-webkit-meter-bar {
+    background-color: var(--drac-ui-bg-light);
+    border-radius: var(--drac-border-radius);
+    border: none;
+  }
+
+  &::-webkit-meter-optimum-value {
+    background: linear-gradient(to right, var(--drac-green), var(--drac-cyan));
+    border-radius: var(--drac-border-radius);
+  }
+
+  &::-webkit-meter-suboptimum-value {
+    background: linear-gradient(to right, var(--drac-yellow), var(--drac-orange));
+    border-radius: var(--drac-border-radius);
+  }
+
+  &::-webkit-meter-even-less-good-value {
+    background: linear-gradient(to right, var(--drac-orange), var(--drac-red));
+    border-radius: var(--drac-border-radius);
+  }
+
+  // Firefox
+  &::-moz-meter-bar {
+    border-radius: var(--drac-border-radius);
+  }
+
+  &:-moz-meter-optimum::-moz-meter-bar {
+    background: linear-gradient(to right, var(--drac-green), var(--drac-cyan));
+  }
+
+  &:-moz-meter-sub-optimum::-moz-meter-bar {
+    background: linear-gradient(to right, var(--drac-yellow), var(--drac-orange));
+  }
+
+  &:-moz-meter-sub-sub-optimum::-moz-meter-bar {
+    background: linear-gradient(to right, var(--drac-orange), var(--drac-red));
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Dialog
+// -----------------------------------------------------------------------------
+
+dialog {
+  background-color: var(--drac-ui-bg-light);
+  color: var(--drac-fg);
+  border: 1px solid var(--drac-border-color);
+  border-radius: var(--drac-border-radius);
+  padding: var(--drac-spacing-lg);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  max-width: 90vw;
+  max-height: 90vh;
+
+  &::backdrop {
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(2px);
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Address
+// -----------------------------------------------------------------------------
+
+address {
+  font-style: normal;
+  color: var(--drac-comment);
+  border-left: 3px solid var(--drac-purple);
+  padding-left: var(--drac-spacing-md);
+  margin: var(--drac-spacing-md) 0;
+}
+
+// -----------------------------------------------------------------------------
+// Figure & Figcaption
+// -----------------------------------------------------------------------------
+
+figure {
+  margin: var(--drac-spacing-lg) 0;
+  padding: 0;
+}
+
+figcaption {
+  font-size: 0.9em;
+  color: var(--drac-comment);
+  font-style: italic;
+  margin-top: var(--drac-spacing-sm);
+  text-align: center;
+}
+
+// -----------------------------------------------------------------------------
+// Wbr (Word Break Opportunity)
+// -----------------------------------------------------------------------------
+
+wbr {
+  // No visible styling needed, but ensure it works
+  display: inline;
+}
+
+// -----------------------------------------------------------------------------
+// Dfn (Definition)
+// -----------------------------------------------------------------------------
+
+dfn {
+  font-style: italic;
+  color: var(--drac-cyan);
+  border-bottom: 1px dotted var(--drac-cyan);
+  cursor: help;
+}
+
+// -----------------------------------------------------------------------------
+// S (No longer accurate/relevant)
+// Different from del which indicates removal
+// -----------------------------------------------------------------------------
+
+s {
+  color: var(--drac-comment);
+  text-decoration: line-through;
+}
+
+// -----------------------------------------------------------------------------
+// U (Unarticulated Annotation)
+// For Chinese proper name marks, spelling errors, etc.
+// -----------------------------------------------------------------------------
+
+u {
+  text-decoration-color: var(--drac-red);
+  text-decoration-style: wavy;
+  text-underline-offset: 3px;
+}
+
+// -----------------------------------------------------------------------------
+// Aside
+// -----------------------------------------------------------------------------
+
+aside {
+  background-color: var(--drac-ui-bg-dark);
+  border-left: 3px solid var(--drac-cyan);
+  padding: var(--drac-spacing-md);
+  margin: var(--drac-spacing-md) 0;
+  border-radius: 0 var(--drac-border-radius) var(--drac-border-radius) 0;
+  font-size: 0.95em;
+}
+
+// -----------------------------------------------------------------------------
+// Article
+// -----------------------------------------------------------------------------
+
+article {
+  margin-bottom: var(--drac-spacing-xl);
+  padding-bottom: var(--drac-spacing-lg);
+  border-bottom: 1px solid var(--drac-ui-bg-light);
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Section
+// -----------------------------------------------------------------------------
+
+section {
+  margin-bottom: var(--drac-spacing-xl);
+}
+
+// -----------------------------------------------------------------------------
+// Nav
+// -----------------------------------------------------------------------------
+
+nav {
+  ul {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--drac-spacing-md);
+  }
+
+  li {
+    margin-bottom: 0;
+  }
+
+  a {
+    padding: var(--drac-spacing-xs) var(--drac-spacing-sm);
+    border-radius: var(--drac-border-radius);
+    transition: background-color var(--drac-transition-duration) var(--drac-transition-timing);
+
+    &:hover {
+      background-color: var(--drac-ui-bg-light);
+      text-decoration: none;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Header & Footer (within article/section)
+// -----------------------------------------------------------------------------
+
+article header,
+section header {
+  margin-bottom: var(--drac-spacing-md);
+}
+
+article footer,
+section footer {
+  margin-top: var(--drac-spacing-md);
+  padding-top: var(--drac-spacing-sm);
+  border-top: 1px solid var(--drac-ui-bg-light);
+  font-size: 0.9em;
+  color: var(--drac-comment);
+}
+
+// -----------------------------------------------------------------------------
+// Main
+// -----------------------------------------------------------------------------
+
+main {
+  display: block; // IE11 fix
+}
+
+// -----------------------------------------------------------------------------
+// Template (hidden by default)
+// -----------------------------------------------------------------------------
+
+template {
+  display: none;
+}
+
+// -----------------------------------------------------------------------------
+// Noscript
+// -----------------------------------------------------------------------------
+
+noscript {
+  display: block;
+  background-color: var(--drac-ui-warning);
+  color: var(--drac-bg);
+  padding: var(--drac-spacing-md);
+  text-align: center;
+  font-weight: 600;
+}
+
+// -----------------------------------------------------------------------------
+// Picture
+// -----------------------------------------------------------------------------
+
+picture {
+  display: block;
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Audio & Video
+// -----------------------------------------------------------------------------
+
+audio,
+video {
+  display: block;
+  max-width: 100%;
+  margin: var(--drac-spacing-md) 0;
+  border-radius: var(--drac-border-radius);
+  background-color: var(--drac-ui-bg-dark);
+}
+
+// -----------------------------------------------------------------------------
+// Embed, Object, Iframe
+// -----------------------------------------------------------------------------
+
+embed,
+object,
+iframe {
+  max-width: 100%;
+  border: 1px solid var(--drac-border-color);
+  border-radius: var(--drac-border-radius);
+}
+
+// -----------------------------------------------------------------------------
+// Map
+// -----------------------------------------------------------------------------
+
+map {
+  display: inline;
+}
+
+// -----------------------------------------------------------------------------
+// Optgroup (styled select groups)
+// -----------------------------------------------------------------------------
+
+optgroup {
+  font-weight: 600;
+  color: var(--drac-heading-color);
+  background-color: var(--drac-ui-bg-dark);
+}
+
+// -----------------------------------------------------------------------------
+// Datalist
+// -----------------------------------------------------------------------------
+
+datalist {
+  display: none; // Hidden by default, shown by input
+}
+
+// -----------------------------------------------------------------------------
+// Mark variants for different semantic purposes
+// These extend the base mark styling with different color schemes
+// -----------------------------------------------------------------------------
+
+// Shared mark styling
+.mark-search,
+.mark-reference,
+.mark-warning,
+.mark-error {
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+}
+
+// Search result highlighting
+.mark-search {
+  background-color: var(--drac-cyan);
+  color: var(--drac-mark-color);
+}
+
+// Reference/citation highlighting
+.mark-reference {
+  background-color: var(--drac-purple);
+  color: var(--drac-mark-color);
+}
+
+// Warning highlighting
+.mark-warning {
+  background-color: var(--drac-orange);
+  color: var(--drac-mark-color);
+}
+
+// Error highlighting
+.mark-error {
+  background-color: var(--drac-red);
+  color: var(--drac-mark-color);
+}

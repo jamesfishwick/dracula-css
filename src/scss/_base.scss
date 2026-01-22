@@ -1,0 +1,99 @@
+// =============================================================================
+// Dracula CSS - Base Styles
+// Foundation resets and defaults
+// =============================================================================
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--drac-font-family);
+  font-size: var(--drac-font-size-base);
+  line-height: var(--drac-line-height);
+  -webkit-text-size-adjust: 100%;
+  -moz-tab-size: 4;
+  tab-size: 4;
+}
+
+body {
+  margin: 0;
+  padding: var(--drac-spacing-xl);
+  background-color: var(--drac-bg);
+  color: var(--drac-fg);
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+// Selection
+::selection {
+  background-color: var(--drac-selection);
+  color: var(--drac-fg);
+}
+
+// Focus visible (keyboard navigation)
+:focus-visible {
+  outline: 2px solid var(--drac-ui-focus);
+  outline-offset: 2px;
+}
+
+// Horizontal rule
+hr {
+  border: none;
+  height: 0.25em;
+  background-color: var(--drac-border-color);
+  margin: var(--drac-spacing-lg) 0;
+}
+
+// Images
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+// Abbreviations
+abbr[title] {
+  text-decoration: underline dotted;
+  cursor: help;
+}
+
+// Small text
+small {
+  font-size: 0.875em;
+}
+
+// Subscript and superscript
+sub,
+sup {
+  font-size: 0.75em;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+// -----------------------------------------------------------------------------
+// Reduced Motion
+// Respect user preference for reduced motion
+// -----------------------------------------------------------------------------
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,104 @@
+// =============================================================================
+// Dracula CSS - Mixins
+// Utility mixins for common patterns
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// Focus Ring
+// Consistent focus styling for interactive elements
+// -----------------------------------------------------------------------------
+
+@mixin focus-ring($color: var(--drac-ui-focus)) {
+  &:focus-visible {
+    outline: 2px solid $color;
+    outline-offset: 2px;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Visually Hidden
+// Hide visually but keep accessible to screen readers
+// -----------------------------------------------------------------------------
+
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// -----------------------------------------------------------------------------
+// Truncate Text
+// Single line text truncation with ellipsis
+// -----------------------------------------------------------------------------
+
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// -----------------------------------------------------------------------------
+// Scrollbar Styling
+// Dracula-themed scrollbars
+// -----------------------------------------------------------------------------
+
+@mixin scrollbar {
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--drac-ui-bg-darker);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--drac-comment);
+    border-radius: 4px;
+
+    &:hover {
+      background: var(--drac-ui-bg-lighter);
+    }
+  }
+
+  // Firefox
+  scrollbar-width: thin;
+  scrollbar-color: var(--drac-comment) var(--drac-ui-bg-darker);
+}
+
+// -----------------------------------------------------------------------------
+// Card
+// Common card/panel pattern
+// -----------------------------------------------------------------------------
+
+@mixin card {
+  background-color: var(--drac-ui-bg-dark);
+  border: 1px solid var(--drac-border-color);
+  border-radius: var(--drac-border-radius);
+  padding: var(--drac-spacing-md);
+}
+
+// -----------------------------------------------------------------------------
+// Button Variants
+// Generate button color variants
+// -----------------------------------------------------------------------------
+
+@mixin button-variant($bg-color, $hover-color: null) {
+  background-color: $bg-color;
+
+  @if $hover-color {
+    &:hover {
+      background-color: $hover-color;
+    }
+  } @else {
+    &:hover {
+      filter: brightness(1.1);
+    }
+  }
+}

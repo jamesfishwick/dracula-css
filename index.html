@@ -1,0 +1,781 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🧛 Dracula CSS - Framework-Agnostic Theme</title>
+    <link rel="stylesheet" href="dist/dracula.css" />
+    <!-- Prism.js Dracula theme for syntax highlighting -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/prism-themes@1.9.0/themes/prism-dracula.min.css"
+    />
+    <style>
+      /* Demo-specific styles */
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--drac-border-color);
+      }
+      .header h1 {
+        margin: 0;
+        border: none;
+        padding: 0;
+      }
+      .header-links {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+      }
+      .header-links a {
+        padding: 0.5rem 1rem;
+        background-color: var(--drac-ui-bg-light);
+        border-radius: var(--drac-border-radius);
+        font-size: 0.9em;
+      }
+      .header-links a:hover {
+        background-color: var(--drac-purple);
+        text-decoration: none;
+      }
+      .section {
+        margin-bottom: 3rem;
+      }
+      .color-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 1rem;
+        margin: 1rem 0;
+      }
+      .color-swatch {
+        padding: 1rem;
+        border-radius: var(--drac-border-radius);
+        text-align: center;
+        font-family: var(--drac-font-family-mono);
+        font-size: 0.8em;
+      }
+      .color-swatch span {
+        display: block;
+        margin-top: 0.5rem;
+        opacity: 0.8;
+      }
+      .theme-toggle {
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+        z-index: 1000;
+        padding: 0.75rem 1.5rem;
+        background: var(--drac-purple);
+        color: var(--drac-fg);
+        border: none;
+        border-radius: var(--drac-border-radius);
+        cursor: pointer;
+        font-weight: 600;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      }
+      .theme-toggle:hover {
+        background: var(--drac-pink);
+      }
+      .demo-form {
+        max-width: 400px;
+      }
+      .form-group {
+        margin-bottom: 1rem;
+      }
+      .button-group {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        margin: 1rem 0;
+      }
+      .btn-success {
+        background-color: var(--drac-ui-success);
+      }
+      .btn-error {
+        background-color: var(--drac-ui-error);
+      }
+      .btn-warning {
+        background-color: var(--drac-ui-warning);
+        color: var(--drac-bg);
+      }
+      .btn-info {
+        background-color: var(--drac-ui-info);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <h1>🧛 Dracula CSS</h1>
+      <nav class="header-links">
+        <a href="https://github.com/dracula/css">GitHub</a>
+        <a href="https://draculatheme.com">Dracula Theme</a>
+        <a href="https://spec.draculatheme.com">Spec</a>
+        <a href="dist/dracula.css" download>Download CSS</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Introduction -->
+      <section class="section">
+        <p>
+          A <strong>framework-agnostic</strong> Dracula theme for the web. CSS
+          variables, Sass, and JS tokens. Not a component library — just
+          <em>sensible defaults</em> for HTML elements following the
+          <a href="https://spec.draculatheme.com"
+            >official Dracula specification</a
+          >.
+        </p>
+      </section>
+
+      <!-- Color Palette -->
+      <section class="section">
+        <h2>🩸 Color Palette</h2>
+        <h3>Syntax Colors</h3>
+        <div class="color-grid">
+          <div
+            class="color-swatch"
+            style="
+              background: var(--drac-bg);
+              color: var(--drac-fg);
+              border: 1px solid var(--drac-comment);
+            "
+          >
+            Background<span>#282a36</span>
+          </div>
+          <div
+            class="color-swatch"
+            style="background: var(--drac-fg); color: var(--drac-bg)"
+          >
+            Foreground<span>#f8f8f2</span>
+          </div>
+          <div
+            class="color-swatch"
+            style="background: var(--drac-selection); color: var(--drac-fg)"
+          >
+            Selection<span>#44475a</span>
+          </div>
+          <div
+            class="color-swatch"
+            style="background: var(--drac-comment); color: var(--drac-fg)"
+          >
+            Comment<span>#6272a4</span>
+          </div>
+          <div
+            class="color-swatch"
+            style="background: var(--drac-red); color: var(--drac-bg)"
+          >
+            Red<span>#ff5555</span>
+          </div>
+          <div
+            class="color-swatch"
+            style="background: var(--drac-orange); color: var(--drac-bg)"
+          >
+            Orange<span>#ffb86c</span>
+          </div>
+          <div
+            class="color-swatch"
+            style="background: var(--drac-yellow); color: var(--drac-bg)"
+          >
+            Yellow<span>#f1fa8c</span>
+          </div>
+          <div
+            class="color-swatch"
+            style="background: var(--drac-green); color: var(--drac-bg)"
+          >
+            Green<span>#50fa7b</span>
+          </div>
+          <div
+            class="color-swatch"
+            style="background: var(--drac-purple); color: var(--drac-fg)"
+          >
+            Purple<span>#bd93f9</span>
+          </div>
+          <div
+            class="color-swatch"
+            style="background: var(--drac-cyan); color: var(--drac-bg)"
+          >
+            Cyan<span>#8be9fd</span>
+          </div>
+          <div
+            class="color-swatch"
+            style="background: var(--drac-pink); color: var(--drac-bg)"
+          >
+            Pink<span>#ff79c6</span>
+          </div>
+        </div>
+
+        <h3>UI Backgrounds</h3>
+        <div class="color-grid">
+          <div
+            class="color-swatch"
+            style="background: var(--drac-ui-bg-darker); color: var(--drac-fg)"
+          >
+            Darker<span>#191a21</span>
+          </div>
+          <div
+            class="color-swatch"
+            style="background: var(--drac-ui-bg-dark); color: var(--drac-fg)"
+          >
+            Dark<span>#21222c</span>
+          </div>
+          <div
+            class="color-swatch"
+            style="background: var(--drac-ui-bg-light); color: var(--drac-fg)"
+          >
+            Light<span>#343746</span>
+          </div>
+          <div
+            class="color-swatch"
+            style="background: var(--drac-ui-bg-lighter); color: var(--drac-fg)"
+          >
+            Lighter<span>#424450</span>
+          </div>
+        </div>
+
+        <h3>Functional Colors</h3>
+        <div class="color-grid">
+          <div
+            class="color-swatch"
+            style="background: var(--drac-ui-error); color: var(--drac-fg)"
+          >
+            Error<span>#de5735</span>
+          </div>
+          <div
+            class="color-swatch"
+            style="background: var(--drac-ui-warning); color: var(--drac-bg)"
+          >
+            Warning<span>#a39514</span>
+          </div>
+          <div
+            class="color-swatch"
+            style="background: var(--drac-ui-success); color: var(--drac-fg)"
+          >
+            Success<span>#089108</span>
+          </div>
+          <div
+            class="color-swatch"
+            style="background: var(--drac-ui-info); color: var(--drac-fg)"
+          >
+            Info<span>#0081d6</span>
+          </div>
+          <div
+            class="color-swatch"
+            style="background: var(--drac-ui-focus); color: var(--drac-fg)"
+          >
+            Focus<span>#815cd6</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Typography -->
+      <section class="section">
+        <h2>📜 Typography</h2>
+        <h1>Heading 1</h1>
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+        <h4>Heading 4</h4>
+        <h5>Heading 5</h5>
+        <h6>Heading 6</h6>
+
+        <p>
+          This is a paragraph with <strong>bold text</strong>,
+          <em>italic text</em>, and a <a href="#">link</a>. You can also use
+          <mark>highlighted text</mark>, <del>deleted text</del>, and
+          <ins>inserted text</ins>.
+        </p>
+
+        <blockquote>
+          <p>
+            This is a blockquote. Dracula is a color scheme for code editors and
+            terminal emulators.
+          </p>
+        </blockquote>
+      </section>
+
+      <!-- Lists -->
+      <section class="section">
+        <h2>Lists</h2>
+        <h3>Unordered List</h3>
+        <ul>
+          <li>First item</li>
+          <li>
+            Second item
+            <ul>
+              <li>Nested item</li>
+              <li>Another nested item</li>
+            </ul>
+          </li>
+          <li>Third item</li>
+        </ul>
+
+        <h3>Ordered List</h3>
+        <ol>
+          <li>First item</li>
+          <li>
+            Second item
+            <ol>
+              <li>Nested item</li>
+              <li>Another nested item</li>
+            </ol>
+          </li>
+          <li>Third item</li>
+        </ol>
+
+        <h3>Definition List</h3>
+        <dl>
+          <dt>Dracula</dt>
+          <dd>A dark color scheme for code editors and terminals.</dd>
+          <dt>Alucard</dt>
+          <dd>
+            The light mode variant of Dracula (Dracula spelled backwards).
+          </dd>
+        </dl>
+      </section>
+
+      <!-- Code -->
+      <section class="section">
+        <h2>🦇 Code</h2>
+        <p>
+          Inline <code>code</code> looks like this. Press <kbd>Ctrl</kbd> +
+          <kbd>C</kbd> to copy.
+        </p>
+
+        <pre class="language-javascript"><code>// Code block example
+const dracula = {
+  background: '#282a36',
+  foreground: '#f8f8f2',
+  purple: '#bd93f9',
+  pink: '#ff79c6'
+};
+
+console.log('Hello, Dracula!');</code></pre>
+      </section>
+
+      <!-- Tables -->
+      <section class="section">
+        <h2>🕸️ Tables</h2>
+        <table>
+          <caption>
+            Dracula color specifications
+          </caption>
+          <thead>
+            <tr>
+              <th>Color</th>
+              <th>Hex</th>
+              <th>Usage</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Purple</td>
+              <td><code>#bd93f9</code></td>
+              <td>Headings, constants</td>
+            </tr>
+            <tr>
+              <td>Pink</td>
+              <td><code>#ff79c6</code></td>
+              <td>Keywords, list markers</td>
+            </tr>
+            <tr>
+              <td>Cyan</td>
+              <td><code>#8be9fd</code></td>
+              <td>Links, classes</td>
+            </tr>
+            <tr>
+              <td>Green</td>
+              <td><code>#50fa7b</code></td>
+              <td>Code, functions</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Forms -->
+      <section class="section">
+        <h2>⚰️ Forms</h2>
+        <form class="demo-form" onsubmit="return false;">
+          <div class="form-group">
+            <label for="text-input">Text Input</label>
+            <input type="text" id="text-input" placeholder="Enter text..." />
+          </div>
+
+          <div class="form-group">
+            <label for="email-input">Email Input</label>
+            <input
+              type="email"
+              id="email-input"
+              placeholder="you@example.com"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="select-input">Select</label>
+            <select id="select-input">
+              <option>Option 1</option>
+              <option>Option 2</option>
+              <option>Option 3</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="textarea-input">Textarea</label>
+            <textarea
+              id="textarea-input"
+              placeholder="Enter longer text..."
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label> <input type="checkbox" /> Checkbox option </label>
+          </div>
+
+          <div class="form-group">
+            <label>
+              <input type="radio" name="radio" checked /> Radio option 1
+            </label>
+            <label> <input type="radio" name="radio" /> Radio option 2 </label>
+          </div>
+
+          <div class="form-group">
+            <label for="range-input">Range</label>
+            <input type="range" id="range-input" />
+          </div>
+
+          <div class="form-group">
+            <label>Progress</label>
+            <progress value="70" max="100"></progress>
+          </div>
+
+          <button type="submit">Submit Button</button>
+          <button type="button" disabled>Disabled</button>
+        </form>
+
+        <h3>Button Variants (Functional Colors)</h3>
+        <div class="button-group">
+          <button class="btn-success">Success</button>
+          <button class="btn-error">Error</button>
+          <button class="btn-warning">Warning</button>
+          <button class="btn-info">Info</button>
+        </div>
+      </section>
+
+      <!-- Details -->
+      <section class="section">
+        <h2>Details/Summary</h2>
+        <details>
+          <summary>Click to expand</summary>
+          <p>
+            This is the expanded content inside a details element. It can
+            contain any HTML content.
+          </p>
+        </details>
+        <details open>
+          <summary>Already expanded</summary>
+          <p>This details element starts in an open state.</p>
+        </details>
+      </section>
+
+      <!-- Esoteric Elements -->
+      <section class="section">
+        <h2>⛧️ Esoteric HTML Elements</h2>
+
+        <h3>Citation &amp; Attribution</h3>
+        <p>
+          As <cite>Bram Stoker</cite> wrote in his famous novel:
+          <q
+            >Listen to them, the children of the night. What music they make!</q
+          >
+        </p>
+
+        <h3>Data &amp; Time</h3>
+        <p>
+          The event occurred on
+          <time datetime="2024-10-31">Halloween 2024</time> at approximately
+          <data value="23:59">midnight</data>.
+        </p>
+
+        <h3>Technical Elements</h3>
+        <p>
+          The variable <var>count</var> stores the number of vampires. Sample
+          output: <samp>Found 13 vampires</samp>. The program produced:
+          <output>Success!</output>
+        </p>
+
+        <h3>Definition</h3>
+        <p>
+          A
+          <dfn title="A mythical creature that feeds on blood">vampire</dfn> is
+          a supernatural being from folklore.
+        </p>
+
+        <h3>Ruby Annotations</h3>
+        <p>
+          <ruby>漢<rt>かん</rt>字<rt>じ</rt></ruby> (Japanese kanji with
+          furigana)
+        </p>
+
+        <h3>Meter</h3>
+        <p>
+          Blood level (optimal):
+          <meter value="0.8" min="0" max="1" low="0.3" high="0.7" optimum="0.8">
+            80%
+          </meter>
+        </p>
+        <p>
+          Blood level (suboptimal):
+          <meter value="0.5" min="0" max="1" low="0.3" high="0.7" optimum="0.8">
+            50%
+          </meter>
+        </p>
+        <p>
+          Blood level (critical):
+          <meter value="0.2" min="0" max="1" low="0.3" high="0.7" optimum="0.8">
+            20%
+          </meter>
+        </p>
+
+        <h3>Address</h3>
+        <address>
+          Count Dracula<br />
+          Bran Castle<br />
+          Transylvania, Romania
+        </address>
+
+        <h3>Figure &amp; Caption</h3>
+        <figure>
+          <div
+            style="
+              background: var(--drac-ui-bg-light);
+              padding: 2rem;
+              text-align: center;
+              border-radius: var(--drac-border-radius);
+            "
+          >
+            [Image placeholder]
+          </div>
+          <figcaption>The mysterious castle on the hill</figcaption>
+        </figure>
+
+        <h3>Strikethrough &amp; Underline</h3>
+        <p><s>Garlic is delicious</s> (no longer accurate for vampires)</p>
+        <p>
+          This text has a <u>spelling errror</u> marked with wavy underline.
+        </p>
+
+        <h3>Aside</h3>
+        <aside>
+          <strong>Fun fact:</strong> The name "Dracula" means "son of Dracul" —
+          Vlad II was known as Vlad Dracul ("Vlad the Dragon").
+        </aside>
+
+        <h3>Mark Variants</h3>
+        <p>
+          Default <mark>highlight</mark>,
+          <span class="mark-search">search result</span>,
+          <span class="mark-reference">reference</span>,
+          <span class="mark-warning">warning</span>,
+          <span class="mark-error">error</span>
+        </p>
+
+        <h3>Dialog (click to open)</h3>
+        <button onclick="document.getElementById('demo-dialog').showModal()">
+          Open Dialog
+        </button>
+        <dialog id="demo-dialog">
+          <h3>Welcome to Castle Dracula</h3>
+          <p>Enter freely and of your own will!</p>
+          <button onclick="document.getElementById('demo-dialog').close()">
+            Close
+          </button>
+        </dialog>
+
+        <h3>Inline Navigation</h3>
+        <nav>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+      </section>
+
+      <!-- Web Components -->
+      <section class="section">
+        <h2>Web Components</h2>
+        <p>
+          Dracula CSS provides <code>::part()</code> selectors for styling web
+          component internals. Component authors expose parts, and these styles
+          apply automatically.
+        </p>
+
+        <h3>Common Part Names</h3>
+        <p>The following <code>::part()</code> selectors are styled:</p>
+        <ul>
+          <li>
+            <code>::part(button)</code>, <code>::part(button-primary)</code>,
+            <code>::part(button-secondary)</code>
+          </li>
+          <li><code>::part(input)</code>, <code>::part(textfield)</code></li>
+          <li>
+            <code>::part(label)</code>, <code>::part(helper)</code>,
+            <code>::part(error)</code>
+          </li>
+          <li><code>::part(panel)</code>, <code>::part(container)</code></li>
+          <li>
+            <code>::part(header)</code>, <code>::part(content)</code>,
+            <code>::part(footer)</code>
+          </li>
+          <li>
+            <code>::part(badge)</code>, <code>::part(chip)</code>,
+            <code>::part(tag)</code>
+          </li>
+          <li><code>::part(listitem)</code>, <code>::part(menuitem)</code></li>
+          <li><code>::part(overlay)</code>, <code>::part(backdrop)</code></li>
+        </ul>
+
+        <h3>Demo: Custom Element with Parts</h3>
+        <drac-card id="demo-card"></drac-card>
+
+        <h3>Usage in Your Components</h3>
+        <pre class="language-javascript"><code>// Your component template:
+// &lt;template&gt;
+//   &lt;div part="panel"&gt;
+//     &lt;h3 part="header"&gt;Title&lt;/h3&gt;
+//     &lt;div part="content"&gt;&lt;slot&gt;&lt;/slot&gt;&lt;/div&gt;
+//     &lt;button part="button"&gt;Action&lt;/button&gt;
+//   &lt;/div&gt;
+// &lt;/template&gt;
+
+// Dracula CSS styles these parts automatically!</code></pre>
+      </section>
+
+      <!-- Syntax Highlighting -->
+      <section class="section">
+        <h2>Syntax Highlighting Integration</h2>
+        <p>
+          Dracula CSS provides container styling for
+          <a href="https://prismjs.com/">Prism.js</a>,
+          <a href="https://highlightjs.org/">Highlight.js</a>, and
+          <a href="https://shiki.style/">Shiki</a>. Add the official Dracula
+          theme for token colors.
+        </p>
+
+        <h3>Code Block with Header</h3>
+        <div class="code-block">
+          <div class="code-block__header">
+            <span class="code-block__filename">dracula.config.js</span>
+            <span class="code-block__language">JavaScript</span>
+          </div>
+          <pre class="language-javascript"><code>const dracula = {
+  colors: {
+    background: '#282a36',
+    foreground: '#f8f8f2',
+    purple: '#bd93f9',
+    pink: '#ff79c6',
+    cyan: '#8be9fd',
+    green: '#50fa7b'
+  },
+
+  apply(element) {
+    element.style.background = this.colors.background;
+    element.style.color = this.colors.foreground;
+  }
+};
+
+export default dracula;</code></pre>
+        </div>
+
+        <h3>With Language Badge</h3>
+        <pre
+          class="language-typescript"
+          data-language="typescript"
+        ><code>interface DraculaTheme {
+  colors: {
+    bg: string;
+    fg: string;
+    purple: string;
+    pink: string;
+  };
+  ui: {
+    bgDark: string;
+    bgLight: string;
+  };
+}
+
+const theme: DraculaTheme = { /* ... */ };</code></pre>
+
+        <h3>Highlighted Lines (Shiki-style)</h3>
+        <pre
+          class="shiki"
+        ><code><span class="line">import { dracula } from 'dracula-css';</span>
+<span class="line"></span>
+<span class="line highlighted">// This line is highlighted</span>
+<span class="line highlighted">const purple = dracula.colors.purple;</span>
+<span class="line"></span>
+<span class="line">console.log(purple); // #bd93f9</span></code></pre>
+
+        <h3>Diff View</h3>
+        <pre class="shiki"><code><span class="line">const config = {</span>
+<span class="line diff remove">  theme: 'light',</span>
+<span class="line diff add">  theme: 'dracula',</span>
+<span class="line">  syntax: true</span>
+<span class="line">};</span></code></pre>
+      </section>
+    </main>
+
+    <button class="theme-toggle" onclick="toggleTheme()">
+      🌙 Toggle Light/Dark
+    </button>
+
+    <script>
+      function toggleTheme() {
+        document.documentElement.classList.toggle("dracula-light");
+        document.documentElement.classList.toggle("dracula-dark");
+      }
+      // Start with explicit dark mode
+      document.documentElement.classList.add("dracula-dark");
+
+      // Demo web component to showcase ::part() styling
+      class DracCard extends HTMLElement {
+        constructor() {
+          super();
+          this.attachShadow({ mode: "open" });
+          this.shadowRoot.innerHTML = `
+          <style>
+            :host {
+              display: block;
+              max-width: 300px;
+            }
+            /* Internal structure only - colors come from ::part() */
+            [part="panel"] { display: flex; flex-direction: column; gap: 0.5rem; }
+            [part="badge"] { align-self: flex-start; }
+            [part="input"] { width: 100%; box-sizing: border-box; }
+          </style>
+          <div part="panel">
+            <span part="badge">Web Component</span>
+            <h4 part="header">Dracula Card</h4>
+            <p part="content">This component uses <code>part</code> attributes. All colors come from Dracula CSS <code>::part()</code> selectors.</p>
+            <label part="label">Your name</label>
+            <input part="input" type="text" placeholder="Enter text...">
+            <span part="helper">Styled via ::part(helper)</span>
+            <div part="footer">
+              <button part="button">Primary</button>
+              <button part="button-secondary">Secondary</button>
+            </div>
+          </div>
+        `;
+        }
+      }
+      customElements.define("drac-card", DracCard);
+    </script>
+
+    <!-- Prism.js for syntax highlighting -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-typescript.min.js"></script>
+  </body>
+</html>

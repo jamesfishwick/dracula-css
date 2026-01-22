@@ -1,0 +1,180 @@
+// =============================================================================
+// 🦇 Dracula CSS - Light Mode Variables (Alucard)
+// https://spec.draculatheme.com/
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// Alucard Syntax Palette
+// Light mode equivalent of the classic Dracula colors
+// -----------------------------------------------------------------------------
+
+$alucard-bg: #f8f8f2 !default;
+$alucard-fg: #282a36 !default;
+$alucard-selection: #e6e6e6 !default;
+$alucard-comment: #6272a4 !default;
+$alucard-red: #ff5555 !default;
+$alucard-orange: #ffb86c !default;
+$alucard-yellow: #f1fa8c !default;
+$alucard-green: #50fa7b !default;
+$alucard-purple: #bd93f9 !default;
+$alucard-cyan: #8be9fd !default;
+$alucard-pink: #ff79c6 !default;
+
+// Darker variants for better contrast on light backgrounds
+$alucard-red-dark: #c33027 !default;
+$alucard-orange-dark: #c47a1a !default;
+$alucard-yellow-dark: #9a8c04 !default;
+$alucard-green-dark: #1d8a2f !default;
+$alucard-purple-dark: #7c4dbd !default;
+$alucard-cyan-dark: #1a9ab5 !default;
+$alucard-pink-dark: #c44f8f !default;
+
+// -----------------------------------------------------------------------------
+// UI Background Scale (Alucard Classic)
+// From spec: https://draculatheme.com/spec#ui-color-palette
+// -----------------------------------------------------------------------------
+
+$alucard-ui-bg-darker: #bcbab3 !default;
+$alucard-ui-bg-dark: #ceccc0 !default;
+$alucard-ui-bg-light: #dedccf !default;
+$alucard-ui-bg-lighter: #ece9df !default;
+$alucard-ui-float: #efeddc !default;
+
+// -----------------------------------------------------------------------------
+// Semantic Mappings (Light Mode)
+// Adjusted for readability on light backgrounds
+// -----------------------------------------------------------------------------
+
+$alucard-heading-color: $alucard-purple-dark !default;
+$alucard-link-color: $alucard-cyan-dark !default;
+$alucard-link-hover-color: $alucard-pink-dark !default;
+$alucard-strong-color: $alucard-orange-dark !default;
+$alucard-emphasis-color: $alucard-yellow-dark !default;
+$alucard-code-color: $alucard-green-dark !default;
+$alucard-blockquote-color: $alucard-comment !default;
+$alucard-mark-bg: #f1fa8c !default;
+$alucard-mark-color: #282a36 !default;
+$alucard-del-color: $alucard-red-dark !default;
+$alucard-ins-color: $alucard-green-dark !default;
+$alucard-border-color: #bcbab3 !default;
+
+// -----------------------------------------------------------------------------
+// Light Mode via prefers-color-scheme
+// -----------------------------------------------------------------------------
+
+@media (prefers-color-scheme: light) {
+  :root {
+    // Syntax Palette
+    --drac-bg: #{$alucard-bg};
+    --drac-fg: #{$alucard-fg};
+    --drac-selection: #{$alucard-selection};
+    --drac-comment: #{$alucard-comment};
+    --drac-red: #{$alucard-red-dark};
+    --drac-orange: #{$alucard-orange-dark};
+    --drac-yellow: #{$alucard-yellow-dark};
+    --drac-green: #{$alucard-green-dark};
+    --drac-purple: #{$alucard-purple-dark};
+    --drac-cyan: #{$alucard-cyan-dark};
+    --drac-pink: #{$alucard-pink-dark};
+
+    // UI Background Scale
+    --drac-ui-bg-darker: #{$alucard-ui-bg-darker};
+    --drac-ui-bg-dark: #{$alucard-ui-bg-dark};
+    --drac-ui-bg-light: #{$alucard-ui-bg-light};
+    --drac-ui-bg-lighter: #{$alucard-ui-bg-lighter};
+    --drac-ui-float: #{$alucard-ui-float};
+
+    // Semantic
+    --drac-heading-color: #{$alucard-heading-color};
+    --drac-link-color: #{$alucard-link-color};
+    --drac-link-hover-color: #{$alucard-link-hover-color};
+    --drac-strong-color: #{$alucard-strong-color};
+    --drac-emphasis-color: #{$alucard-emphasis-color};
+    --drac-code-color: #{$alucard-code-color};
+    --drac-blockquote-color: #{$alucard-blockquote-color};
+    --drac-mark-bg: #{$alucard-mark-bg};
+    --drac-mark-color: #{$alucard-mark-color};
+    --drac-del-color: #{$alucard-del-color};
+    --drac-ins-color: #{$alucard-ins-color};
+    --drac-border-color: #{$alucard-border-color};
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Manual Light Mode Toggle Class
+// Use .dracula-light on html or body to force light mode
+// -----------------------------------------------------------------------------
+
+.dracula-light {
+  // Syntax Palette
+  --drac-bg: #{$alucard-bg};
+  --drac-fg: #{$alucard-fg};
+  --drac-selection: #{$alucard-selection};
+  --drac-comment: #{$alucard-comment};
+  --drac-red: #{$alucard-red-dark};
+  --drac-orange: #{$alucard-orange-dark};
+  --drac-yellow: #{$alucard-yellow-dark};
+  --drac-green: #{$alucard-green-dark};
+  --drac-purple: #{$alucard-purple-dark};
+  --drac-cyan: #{$alucard-cyan-dark};
+  --drac-pink: #{$alucard-pink-dark};
+
+  // UI Background Scale
+  --drac-ui-bg-darker: #{$alucard-ui-bg-darker};
+  --drac-ui-bg-dark: #{$alucard-ui-bg-dark};
+  --drac-ui-bg-light: #{$alucard-ui-bg-light};
+  --drac-ui-bg-lighter: #{$alucard-ui-bg-lighter};
+  --drac-ui-float: #{$alucard-ui-float};
+
+  // Semantic
+  --drac-heading-color: #{$alucard-heading-color};
+  --drac-link-color: #{$alucard-link-color};
+  --drac-link-hover-color: #{$alucard-link-hover-color};
+  --drac-strong-color: #{$alucard-strong-color};
+  --drac-emphasis-color: #{$alucard-emphasis-color};
+  --drac-code-color: #{$alucard-code-color};
+  --drac-blockquote-color: #{$alucard-blockquote-color};
+  --drac-mark-bg: #{$alucard-mark-bg};
+  --drac-mark-color: #{$alucard-mark-color};
+  --drac-del-color: #{$alucard-del-color};
+  --drac-ins-color: #{$alucard-ins-color};
+  --drac-border-color: #{$alucard-border-color};
+}
+
+// -----------------------------------------------------------------------------
+// Force Dark Mode Class
+// Use .dracula-dark on html or body to force dark mode even in light OS setting
+// -----------------------------------------------------------------------------
+
+.dracula-dark {
+  --drac-bg: #282a36;
+  --drac-fg: #f8f8f2;
+  --drac-selection: #44475a;
+  --drac-comment: #6272a4;
+  --drac-red: #ff5555;
+  --drac-orange: #ffb86c;
+  --drac-yellow: #f1fa8c;
+  --drac-green: #50fa7b;
+  --drac-purple: #bd93f9;
+  --drac-cyan: #8be9fd;
+  --drac-pink: #ff79c6;
+
+  --drac-ui-bg-darker: #191a21;
+  --drac-ui-bg-dark: #21222c;
+  --drac-ui-bg-light: #343746;
+  --drac-ui-bg-lighter: #424450;
+  --drac-ui-float: #343746;
+
+  --drac-heading-color: #bd93f9;
+  --drac-link-color: #8be9fd;
+  --drac-link-hover-color: #ff79c6;
+  --drac-strong-color: #ffb86c;
+  --drac-emphasis-color: #f1fa8c;
+  --drac-code-color: #50fa7b;
+  --drac-blockquote-color: #6272a4;
+  --drac-mark-bg: #f1fa8c;
+  --drac-mark-color: #282a36;
+  --drac-del-color: #ff5555;
+  --drac-ins-color: #50fa7b;
+  --drac-border-color: #6272a4;
+}
