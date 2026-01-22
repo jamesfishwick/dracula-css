@@ -14,7 +14,7 @@ cite {
 
 q {
   color: var(--drac-fg);
-  quotes: """ """ "'" "'";
+  quotes: '' ' ' '' "'" "'";
 
   &::before {
     content: open-quote;

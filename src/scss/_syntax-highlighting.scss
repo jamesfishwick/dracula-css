@@ -19,7 +19,7 @@
 // -----------------------------------------------------------------------------
 
 // Base pre/code styling (also in _code.scss, but these are highlighter-specific)
-pre[class*="language-"],
+pre[class*='language-'],
 pre.shiki,
 pre.hljs {
   background-color: var(--drac-ui-bg-dark);
@@ -55,7 +55,7 @@ pre.hljs {
 }
 
 // Inline code within highlighted blocks
-pre[class*="language-"] code,
+pre[class*='language-'] code,
 pre.shiki code,
 pre.hljs code {
   background: transparent;
@@ -110,7 +110,7 @@ div.code-toolbar {
 }
 
 // Prism line numbers (if using line-numbers plugin)
-pre[class*="language-"].line-numbers {
+pre[class*='language-'].line-numbers {
   position: relative;
   padding-left: 3.5em;
   counter-reset: linenumber;
@@ -147,7 +147,7 @@ pre[class*="language-"].line-numbers {
 }
 
 // Prism line highlight (if using line-highlight plugin)
-pre[class*="language-"] .line-highlight {
+pre[class*='language-'] .line-highlight {
   background: rgba(189, 147, 249, 0.15); // purple with opacity
   margin-top: var(--drac-spacing-md);
   padding: 0;
@@ -171,16 +171,16 @@ pre[class*="language-"] .line-highlight {
   > span {
     &::before {
       color: var(--drac-green);
-      content: "$";
+      content: '$';
       display: block;
       padding-right: 0.8em;
     }
 
     &[data-user]::before {
-      content: "[" attr(data-user) "@" attr(data-host) "] $";
+      content: '[' attr(data-user) '@' attr(data-host) '] $';
     }
 
-    &[data-user="root"]::before {
+    &[data-user='root']::before {
       color: var(--drac-red);
     }
 
@@ -368,7 +368,9 @@ pre.shiki.line-numbers {
   font-size: 0.75rem;
   cursor: pointer;
   opacity: 0;
-  transition: opacity 0.2s ease, background-color var(--drac-transition-duration) var(--drac-transition-timing);
+  transition:
+    opacity 0.2s ease,
+    background-color var(--drac-transition-duration) var(--drac-transition-timing);
 
   &:hover {
     background: var(--drac-purple);

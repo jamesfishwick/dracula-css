@@ -7,13 +7,13 @@
 Add to your HTML `<head>`:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dracula-css/dist/dracula.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dracula-css/dist/dracula.min.css" />
 ```
 
 Or via unpkg:
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/dracula-css/dist/dracula.min.css">
+<link rel="stylesheet" href="https://unpkg.com/dracula-css/dist/dracula.min.css" />
 ```
 
 ### npm
@@ -49,7 +49,7 @@ Download the CSS files directly:
 Includes CSS variables and base element styling:
 
 ```html
-<link rel="stylesheet" href="dracula.css">
+<link rel="stylesheet" href="dracula.css" />
 ```
 
 ### Variables Only
@@ -57,7 +57,7 @@ Includes CSS variables and base element styling:
 Just the CSS custom properties, no element styling:
 
 ```html
-<link rel="stylesheet" href="dracula-variables.css">
+<link rel="stylesheet" href="dracula-variables.css" />
 ```
 
 Then use variables in your own CSS:
@@ -150,9 +150,9 @@ Add a class to the `<html>` element:
 ```html
 <!-- Force dark mode -->
 <html class="dracula-dark">
-
-<!-- Force light mode -->
-<html class="dracula-light">
+  <!-- Force light mode -->
+  <html class="dracula-light"></html>
+</html>
 ```
 
 Toggle with JavaScript:
@@ -175,57 +175,57 @@ function setTheme(theme) {
 
 ### Syntax Colors (Prose/Content)
 
-| Variable | Hex | Usage |
-|----------|-----|-------|
-| `--drac-bg` | #282a36 | Background |
-| `--drac-fg` | #f8f8f2 | Foreground text |
-| `--drac-selection` | #44475a | Selection highlight |
-| `--drac-comment` | #6272a4 | Muted text, borders |
-| `--drac-red` | #ff5555 | Errors, deletions |
-| `--drac-orange` | #ffb86c | Bold text |
-| `--drac-yellow` | #f1fa8c | Italic text, highlights |
-| `--drac-green` | #50fa7b | Code, success |
-| `--drac-purple` | #bd93f9 | Headings, buttons |
-| `--drac-cyan` | #8be9fd | Links |
-| `--drac-pink` | #ff79c6 | Hover states, keywords |
+| Variable           | Hex     | Usage                   |
+| ------------------ | ------- | ----------------------- |
+| `--drac-bg`        | #282a36 | Background              |
+| `--drac-fg`        | #f8f8f2 | Foreground text         |
+| `--drac-selection` | #44475a | Selection highlight     |
+| `--drac-comment`   | #6272a4 | Muted text, borders     |
+| `--drac-red`       | #ff5555 | Errors, deletions       |
+| `--drac-orange`    | #ffb86c | Bold text               |
+| `--drac-yellow`    | #f1fa8c | Italic text, highlights |
+| `--drac-green`     | #50fa7b | Code, success           |
+| `--drac-purple`    | #bd93f9 | Headings, buttons       |
+| `--drac-cyan`      | #8be9fd | Links                   |
+| `--drac-pink`      | #ff79c6 | Hover states, keywords  |
 
 ### UI Backgrounds
 
-| Variable | Hex | Usage |
-|----------|-----|-------|
-| `--drac-ui-bg-darker` | #191a21 | Deepest background |
-| `--drac-ui-bg-dark` | #21222c | Dark surface |
-| `--drac-ui-bg-light` | #343746 | Elevated surface |
-| `--drac-ui-bg-lighter` | #424450 | Highest elevation |
-| `--drac-ui-float` | #343746 | Floating elements |
+| Variable               | Hex     | Usage              |
+| ---------------------- | ------- | ------------------ |
+| `--drac-ui-bg-darker`  | #191a21 | Deepest background |
+| `--drac-ui-bg-dark`    | #21222c | Dark surface       |
+| `--drac-ui-bg-light`   | #343746 | Elevated surface   |
+| `--drac-ui-bg-lighter` | #424450 | Highest elevation  |
+| `--drac-ui-float`      | #343746 | Floating elements  |
 
 ### Functional Colors
 
-| Variable | Hex | Usage |
-|----------|-----|-------|
-| `--drac-ui-error` | #de5735 | Error states, alerts |
-| `--drac-ui-warning` | #a39514 | Warning states |
-| `--drac-ui-success` | #089108 | Success states |
-| `--drac-ui-info` | #0081d6 | Info states, links |
-| `--drac-ui-focus` | #815cd6 | Focus rings |
+| Variable            | Hex     | Usage                |
+| ------------------- | ------- | -------------------- |
+| `--drac-ui-error`   | #de5735 | Error states, alerts |
+| `--drac-ui-warning` | #a39514 | Warning states       |
+| `--drac-ui-success` | #089108 | Success states       |
+| `--drac-ui-info`    | #0081d6 | Info states, links   |
+| `--drac-ui-focus`   | #815cd6 | Focus rings          |
 
 ### Spacing & Layout
 
-| Variable | Value | Usage |
-|----------|-------|-------|
-| `--drac-spacing-xs` | 0.25rem | Tight spacing |
-| `--drac-spacing-sm` | 0.5rem | Small spacing |
-| `--drac-spacing-md` | 1rem | Default spacing |
-| `--drac-spacing-lg` | 1.5rem | Large spacing |
-| `--drac-spacing-xl` | 2rem | Extra large spacing |
-| `--drac-border-radius` | 6px | Default border radius |
+| Variable               | Value   | Usage                 |
+| ---------------------- | ------- | --------------------- |
+| `--drac-spacing-xs`    | 0.25rem | Tight spacing         |
+| `--drac-spacing-sm`    | 0.5rem  | Small spacing         |
+| `--drac-spacing-md`    | 1rem    | Default spacing       |
+| `--drac-spacing-lg`    | 1.5rem  | Large spacing         |
+| `--drac-spacing-xl`    | 2rem    | Extra large spacing   |
+| `--drac-border-radius` | 6px     | Default border radius |
 
 ### Transitions
 
-| Variable | Value | Usage |
-|----------|-------|-------|
+| Variable                     | Value | Usage              |
+| ---------------------------- | ----- | ------------------ |
 | `--drac-transition-duration` | 0.15s | Animation duration |
-| `--drac-transition-timing` | ease | Animation easing |
+| `--drac-transition-timing`   | ease  | Animation easing   |
 
 Customize transitions globally:
 
@@ -243,24 +243,24 @@ Customize transitions globally:
 
 Terminal color palette for web-based terminal emulators and CLI-style interfaces:
 
-| Variable | Hex | ANSI Code |
-|----------|-----|-----------|
-| `--drac-ansi-black` | #21222c | 0 |
-| `--drac-ansi-red` | #ff5555 | 1 |
-| `--drac-ansi-green` | #50fa7b | 2 |
-| `--drac-ansi-yellow` | #f1fa8c | 3 |
-| `--drac-ansi-blue` | #bd93f9 | 4 |
-| `--drac-ansi-magenta` | #ff79c6 | 5 |
-| `--drac-ansi-cyan` | #8be9fd | 6 |
-| `--drac-ansi-white` | #f8f8f2 | 7 |
-| `--drac-ansi-bright-black` | #6272a4 | 8 |
-| `--drac-ansi-bright-red` | #ff6e6e | 9 |
-| `--drac-ansi-bright-green` | #69ff94 | 10 |
-| `--drac-ansi-bright-yellow` | #ffffa5 | 11 |
-| `--drac-ansi-bright-blue` | #d6acff | 12 |
-| `--drac-ansi-bright-magenta` | #ff92df | 13 |
-| `--drac-ansi-bright-cyan` | #a4ffff | 14 |
-| `--drac-ansi-bright-white` | #ffffff | 15 |
+| Variable                     | Hex     | ANSI Code |
+| ---------------------------- | ------- | --------- |
+| `--drac-ansi-black`          | #21222c | 0         |
+| `--drac-ansi-red`            | #ff5555 | 1         |
+| `--drac-ansi-green`          | #50fa7b | 2         |
+| `--drac-ansi-yellow`         | #f1fa8c | 3         |
+| `--drac-ansi-blue`           | #bd93f9 | 4         |
+| `--drac-ansi-magenta`        | #ff79c6 | 5         |
+| `--drac-ansi-cyan`           | #8be9fd | 6         |
+| `--drac-ansi-white`          | #f8f8f2 | 7         |
+| `--drac-ansi-bright-black`   | #6272a4 | 8         |
+| `--drac-ansi-bright-red`     | #ff6e6e | 9         |
+| `--drac-ansi-bright-green`   | #69ff94 | 10        |
+| `--drac-ansi-bright-yellow`  | #ffffa5 | 11        |
+| `--drac-ansi-bright-blue`    | #d6acff | 12        |
+| `--drac-ansi-bright-magenta` | #ff92df | 13        |
+| `--drac-ansi-bright-cyan`    | #a4ffff | 14        |
+| `--drac-ansi-bright-white`   | #ffffff | 15        |
 
 Example usage for a terminal emulator component:
 
@@ -294,7 +294,7 @@ npm install prismjs
 2. Get the theme from [github.com/dracula/prism](https://github.com/dracula/prism):
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prism-themes/themes/prism-dracula.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prism-themes/themes/prism-dracula.css" />
 <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script>
 ```
 
@@ -320,9 +320,11 @@ npm install highlight.js
 2. Get the theme from [github.com/dracula/highlightjs](https://github.com/dracula/highlightjs):
 
 ```html
-<link rel="stylesheet" href="path/to/dracula.css">
+<link rel="stylesheet" href="path/to/dracula.css" />
 <script src="https://cdn.jsdelivr.net/npm/highlight.js/lib/highlight.min.js"></script>
-<script>hljs.highlightAll();</script>
+<script>
+  hljs.highlightAll();
+</script>
 ```
 
 3. Dracula CSS provides container styling and line numbers support (with highlightjs-line-numbers plugin).
@@ -344,7 +346,7 @@ import { codeToHtml } from 'shiki';
 
 const html = await codeToHtml(code, {
   lang: 'javascript',
-  theme: 'dracula'  // or 'dracula-soft' for lower contrast
+  theme: 'dracula', // or 'dracula-soft' for lower contrast
 });
 ```
 
@@ -397,9 +399,9 @@ Astro's built-in syntax highlighting uses Shiki. Configure in `astro.config.mjs`
 export default defineConfig({
   markdown: {
     shikiConfig: {
-      theme: 'dracula'
-    }
-  }
+      theme: 'dracula',
+    },
+  },
 });
 ```
 
@@ -428,9 +430,9 @@ With `rehype-pretty-code` (uses Shiki):
 import rehypePrettyCode from 'rehype-pretty-code';
 
 const options = {
-  theme: 'dracula'
+  theme: 'dracula',
 };
 
 // Add to rehype plugins
-rehypePlugins: [[rehypePrettyCode, options]]
+rehypePlugins: [[rehypePrettyCode, options]];
 ```

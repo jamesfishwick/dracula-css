@@ -20,14 +20,14 @@ Think: **"Normalize.css meets Dracula colors"** — not **"Bootstrap but Dracula
 
 ### Why This Exists
 
-| Aspect | dracula-ui (archived) | dracula-css |
-|--------|----------------------|-------------|
-| **Scope** | Full React component library | Variables + base element styling only |
-| **Framework** | React-first | Framework-agnostic — pure CSS/Sass |
-| **Dependencies** | React, TypeScript, TSDX | Zero runtime deps |
-| **Maintenance** | High — components need updates | Low — CSS variables are stable |
-| **Competition** | Competing with Tailwind, shadcn | Not competing — complementary foundation |
-| **Use case** | "Build sites with Dracula UI" | "Add Dracula colors to your existing stack" |
+| Aspect           | dracula-ui (archived)           | dracula-css                                 |
+| ---------------- | ------------------------------- | ------------------------------------------- |
+| **Scope**        | Full React component library    | Variables + base element styling only       |
+| **Framework**    | React-first                     | Framework-agnostic — pure CSS/Sass          |
+| **Dependencies** | React, TypeScript, TSDX         | Zero runtime deps                           |
+| **Maintenance**  | High — components need updates  | Low — CSS variables are stable              |
+| **Competition**  | Competing with Tailwind, shadcn | Not competing — complementary foundation    |
+| **Use case**     | "Build sites with Dracula UI"   | "Add Dracula colors to your existing stack" |
 
 ## 🦇 Install
 
@@ -36,7 +36,7 @@ All instructions can be found at [draculatheme.com/css](https://draculatheme.com
 ### Quick Start (CDN)
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dracula-css/dist/dracula.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dracula-css/dist/dracula.min.css" />
 ```
 
 ### npm
@@ -74,13 +74,13 @@ const styles = {
 
 ## ⚰️ What's Included
 
-| File | Use Case |
-|------|----------|
-| `dist/dracula.css` | Full bundle — variables + base styles |
-| `dist/dracula.min.css` | Minified production bundle |
+| File                         | Use Case                                    |
+| ---------------------------- | ------------------------------------------- |
+| `dist/dracula.css`           | Full bundle — variables + base styles       |
+| `dist/dracula.min.css`       | Minified production bundle                  |
 | `dist/dracula-variables.css` | Just CSS custom properties (no base styles) |
-| `dist/dracula-tokens.js` | JS/TS export for CSS-in-JS |
-| `src/scss/*` | Sass source files for customization |
+| `dist/dracula-tokens.js`     | JS/TS export for CSS-in-JS                  |
+| `src/scss/*`                 | Sass source files for customization         |
 
 ## 🩸 Color Architecture
 
@@ -89,6 +89,7 @@ Following the [official Dracula specification](https://spec.draculatheme.com/):
 ### Three Color Layers
 
 **1. Syntax Palette** — For prose/content (bright, high contrast)
+
 ```css
 --drac-bg: #282a36;
 --drac-fg: #f8f8f2;
@@ -98,6 +99,7 @@ Following the [official Dracula specification](https://spec.draculatheme.com/):
 ```
 
 **2. UI Background Scale** — For surfaces and elevation
+
 ```css
 --drac-ui-bg-darker: #191a21;
 --drac-ui-bg-dark: #21222c;
@@ -106,6 +108,7 @@ Following the [official Dracula specification](https://spec.draculatheme.com/):
 ```
 
 **3. Functional Colors** — For UI interactions (buttons, alerts, validation)
+
 ```css
 --drac-ui-error: #de5735;
 --drac-ui-warning: #a39514;
@@ -114,7 +117,7 @@ Following the [official Dracula specification](https://spec.draculatheme.com/):
 --drac-ui-focus: #815cd6;
 ```
 
-Per the spec: *"Functional colors are UI-specific colors for interactive elements, borders, and indicators. Do not use in editor or terminal applications."*
+Per the spec: _"Functional colors are UI-specific colors for interactive elements, borders, and indicators. Do not use in editor or terminal applications."_
 
 ### 🌙 Dark/Light Mode
 
@@ -123,12 +126,12 @@ Dracula CSS supports both dark (Dracula) and light (Alucard) modes:
 ```html
 <!-- Automatic (follows system preference) -->
 <html>
-
-<!-- Force dark mode -->
-<html class="dracula-dark">
-
-<!-- Force light mode -->
-<html class="dracula-light">
+  <!-- Force dark mode -->
+  <html class="dracula-dark">
+    <!-- Force light mode -->
+    <html class="dracula-light"></html>
+  </html>
+</html>
 ```
 
 ## Base Element Styling
@@ -198,8 +201,8 @@ All variables are prefixed with `--drac-` to avoid conflicts:
 This theme is maintained by the following person(s) and a bunch of [awesome contributors](https://github.com/dracula/css/graphs/contributors).
 
 | [![James Fishwick](https://github.com/jamesfishwick.png?size=100)](https://github.com/jamesfishwick) |
-| --- |
-| [James Fishwick](https://github.com/jamesfishwick) |
+| ---------------------------------------------------------------------------------------------------- |
+| [James Fishwick](https://github.com/jamesfishwick)                                                   |
 
 ## 🦇 Community
 

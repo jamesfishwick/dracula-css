@@ -86,8 +86,17 @@ $drac-ins-color: $drac-green !default;
 // Typography
 // -----------------------------------------------------------------------------
 
-$drac-font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
-$drac-font-family-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace !default;
+$drac-font-family:
+  system-ui,
+  -apple-system,
+  BlinkMacSystemFont,
+  'Segoe UI',
+  Roboto,
+  'Helvetica Neue',
+  Arial,
+  sans-serif !default;
+$drac-font-family-mono:
+  ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace !default;
 $drac-font-size-base: 16px !default;
 $drac-line-height: 1.6 !default;
 
