@@ -3,7 +3,7 @@ const colorContrast = require('color-contrast-checker');
 describe('Color Contrast Accessibility (WCAG AA)', () => {
   const checker = new colorContrast();
 
-  // Extract colors from Sass variables
+  // Hardcoded color values matching Sass variables in _variables.scss
   const colors = {
     bg: '#282a36',
     fg: '#f8f8f2',

@@ -56,6 +56,44 @@ describe('Dracula CSS Build', () => {
     const closeBraces = (compiledCSS.match(/\}/g) || []).length;
     expect(openBraces).toBe(closeBraces);
   });
+
+  test('Light mode media query contains Alucard colors', () => {
+    expect(compiledCSS).toContain('@media (prefers-color-scheme: light)');
+    expect(compiledCSS).toMatch(/@media.*prefers-color-scheme:\s*light.*--drac-bg:\s*#f8f8f2/s);
+    expect(compiledCSS).toMatch(/@media.*prefers-color-scheme:\s*light.*--drac-purple:\s*#7c4dbd/s);
+  });
+
+  test('Manual theme toggle classes exist', () => {
+    expect(compiledCSS).toContain('.dracula-light');
+    expect(compiledCSS).toContain('.dracula-dark');
+    expect(compiledCSS).toMatch(/\.dracula-light\s*\{[\s\S]*--drac-bg:\s*#f8f8f2/);
+    expect(compiledCSS).toMatch(/\.dracula-dark\s*\{[\s\S]*--drac-bg:\s*#282a36/);
+  });
+
+  test('All ANSI colors are exported', () => {
+    const ansiColors = [
+      'black',
+      'red',
+      'green',
+      'yellow',
+      'blue',
+      'magenta',
+      'cyan',
+      'white',
+      'bright-black',
+      'bright-red',
+      'bright-green',
+      'bright-yellow',
+      'bright-blue',
+      'bright-magenta',
+      'bright-cyan',
+      'bright-white',
+    ];
+
+    ansiColors.forEach((color) => {
+      expect(compiledCSS).toContain(`--drac-ansi-${color}:`);
+    });
+  });
 });
 
 describe('Variables-only Build', () => {

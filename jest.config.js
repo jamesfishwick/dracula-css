@@ -1,10 +1,7 @@
 module.exports = {
   testEnvironment: 'node',
   testMatch: ['**/tests/**/*.test.js'],
-  collectCoverageFrom: [
-    'src/scss/**/*.scss',
-    '!src/scss/**/_*.scss', // Exclude partials from coverage reporting
-  ],
+  collectCoverageFrom: ['src/scss/**/*.scss', '!src/scss/**/_*.scss'],
   coverageReporters: ['text', 'lcov', 'html'],
   coverageThreshold: {
     global: {
