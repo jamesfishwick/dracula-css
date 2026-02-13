@@ -90,7 +90,7 @@ const styles = {
 
 ## 🩸 Color Architecture
 
-Following the [official Dracula specification](https://spec.draculatheme.com/):
+dracula-css organizes colors from the [official Dracula specification](https://spec.draculatheme.com/) into three layers for web development:
 
 ### Three Color Layers
 
@@ -130,13 +130,19 @@ Per the spec: _"Functional colors are UI-specific colors for interactive element
 Dracula CSS supports both dark (Dracula) and light (Alucard) modes:
 
 ```html
-<!-- Automatic (follows system preference) -->
+<!-- Option 1: Automatic (follows system preference) -->
 <html>
-  <!-- Force dark mode -->
-  <html class="dracula-dark">
-    <!-- Force light mode -->
-    <html class="dracula-light"></html>
-  </html>
+  ...
+</html>
+
+<!-- Option 2: Force dark mode -->
+<html class="dracula-dark">
+  ...
+</html>
+
+<!-- Option 3: Force light mode -->
+<html class="dracula-light">
+  ...
 </html>
 ```
 
@@ -220,7 +226,7 @@ This theme is maintained by the following person(s) and a bunch of [awesome cont
 
 **Color Pickers & Generators:**
 
-- [Dracula Colors by Stormhold](https://dracula-colors.stormhold.net/) — Interactive color picker with HSL/RGB/HEX conversions
+- [Dracula Colors by Stormhold](https://dracula-colors.stormhold.net/) — Interactive color reference with RGB values and copy-to-clipboard
 - [Stormhold Visual Reference](https://stormhold.net/the-dracula-theme-visual-reference-and-css-variables-for-web-design/) — Comprehensive visual guide to Dracula theme
 
 **Component Libraries (Non-official):**
